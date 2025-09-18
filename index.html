@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -84,18 +84,6 @@
 
         .navbar-brand {
             font-weight: 700;
-        }
-
-        .theme-switcher {
-            cursor: pointer;
-            font-size: 1.2rem;
-            margin-left: 15px;
-            color: var(--text-secondary-color);
-            transition: color 0.2s ease;
-        }
-
-        .theme-switcher:hover {
-            color: var(--primary-color);
         }
 
         .hero-section {
@@ -350,12 +338,8 @@
                     <ul class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
                         <li class="nav-item"><a class="nav-link" href="#summarizer">Summarizer</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#tech-stack">Technology</a></li>
                         <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item">
-                            <div class="theme-switcher"><i class="bi bi-moon-stars-fill" id="theme-icon"></i></div>
-                        </li>
                     </ul>
                 </div>
         </div>
@@ -647,21 +631,6 @@
     <script>
         // Initialize AOS
         AOS.init({ duration: 600, once: true, easing: 'ease-in-out-quad' });
-
-        // --- Theme Switcher ---
-        const themeSwitcher = document.getElementById('theme-icon');
-        const doc = document.documentElement;
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        doc.setAttribute('data-theme', currentTheme);
-        themeSwitcher.className = currentTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
-
-        themeSwitcher.addEventListener('click', () => {
-            const currentTheme = doc.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            doc.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeSwitcher.className = newTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
-        });
 
         // --- Smooth Scrolling ---
         document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
